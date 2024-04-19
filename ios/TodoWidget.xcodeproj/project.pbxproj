@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* TodoWidgetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TodoWidgetTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-TodoWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-TodoWidget.a */; };
+		0D4600B32BD26240005AC203 /* RNSharedWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4600B22BD26240005AC203 /* RNSharedWidget.m */; };
+		0D4600B62BD26B27005AC203 /* WidgetKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4600B52BD26B27005AC203 /* WidgetKitHelper.swift */; };
 		0DC82B4B2BD11B9B00E9386E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC82B4A2BD11B9B00E9386E /* WidgetKit.framework */; };
 		0DC82B4D2BD11B9B00E9386E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC82B4C2BD11B9B00E9386E /* SwiftUI.framework */; };
 		0DC82B502BD11B9B00E9386E /* ShowTodoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC82B4F2BD11B9B00E9386E /* ShowTodoWidgetBundle.swift */; };
@@ -59,6 +61,11 @@
 		00E356EE1AD99517003FC87E /* TodoWidgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoWidgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TodoWidgetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoWidgetTests.m; sourceTree = "<group>"; };
+		0D4600AE2BD2609A005AC203 /* ShowTodoWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShowTodoWidgetExtension.entitlements; sourceTree = "<group>"; };
+		0D4600B12BD2621F005AC203 /* RNSharedWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNSharedWidget.h; sourceTree = "<group>"; };
+		0D4600B22BD26240005AC203 /* RNSharedWidget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNSharedWidget.m; sourceTree = "<group>"; };
+		0D4600B42BD26B27005AC203 /* TodoWidget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodoWidget-Bridging-Header.h"; sourceTree = "<group>"; };
+		0D4600B52BD26B27005AC203 /* WidgetKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetKitHelper.swift; sourceTree = "<group>"; };
 		0DC82B492BD11B9B00E9386E /* ShowTodoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShowTodoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC82B4A2BD11B9B00E9386E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		0DC82B4C2BD11B9B00E9386E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -154,6 +161,10 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				0D4600B12BD2621F005AC203 /* RNSharedWidget.h */,
+				0D4600B22BD26240005AC203 /* RNSharedWidget.m */,
+				0D4600B52BD26B27005AC203 /* WidgetKitHelper.swift */,
+				0D4600B42BD26B27005AC203 /* TodoWidget-Bridging-Header.h */,
 			);
 			name = TodoWidget;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				0D4600AE2BD2609A005AC203 /* ShowTodoWidgetExtension.entitlements */,
 				13B07FAE1A68108700A75B9A /* TodoWidget */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* TodoWidgetTests */,
@@ -296,7 +308,7 @@
 						CreatedOnToolsVersion = 15.0;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -521,7 +533,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D4600B62BD26B27005AC203 /* WidgetKitHelper.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				0D4600B32BD26240005AC203 /* RNSharedWidget.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-TodoWidget-TodoWidgetTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -573,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-TodoWidget-TodoWidgetTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = TodoWidgetTests/Info.plist;
@@ -605,9 +621,11 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = ShowTodoWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -651,10 +669,12 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = ShowTodoWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -704,6 +724,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TodoWidget;
+				SWIFT_OBJC_BRIDGING_HEADER = "TodoWidget-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -733,6 +754,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TodoWidget;
+				SWIFT_OBJC_BRIDGING_HEADER = "TodoWidget-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

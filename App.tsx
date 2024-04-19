@@ -1,19 +1,8 @@
-import React, {useState} from 'react';
-import {
-  StyleSheet,
-  NativeModules,
-  SafeAreaView,
-} from 'react-native';
-import SharedGroupPreferences from 'react-native-shared-group-preferences';
+import React from 'react';
+import {StyleSheet, SafeAreaView} from 'react-native';
 import HomeScreen from './app/modules/home/HomeScreen';
 
-const group = 'group.usertodos';
-
-const SharedStorage = NativeModules.SharedStorage;
-
 const App = () => {
-  const [text, setText] = useState('');
-
   return (
     <SafeAreaView style={styles.container}>
       <HomeScreen />
