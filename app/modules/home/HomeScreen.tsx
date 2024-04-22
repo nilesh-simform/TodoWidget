@@ -13,7 +13,6 @@ import {styles} from './HomeStyles';
 import {TodoType, taskSlice} from '../../redux/Task';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../redux/store';
-
 const {RNSharedWidget} = NativeModules;
 
 const Header = () => {
@@ -43,26 +42,6 @@ const HomeScreen = () => {
     dispatch(taskSlice.actions.deleteTask(id));
   };
 
-  const renderList: ListRenderItem<TodoType> = ({item}) => {
-    return (
-      <View style={styles.itemContainer}>
-        <Text style={[styles.itemTitle]} numberOfLines={1}>
-          {item?.title}
-        </Text>
-        <Row style={styles.centeredRow}>
-          <Button
-            onPress={() => editTask(item?.id, item?.title)}
-            style={styles.deleteBtn}>
-            <Text>{Strings.Edit}</Text>
-          </Button>
-          <Button onPress={() => deleteTask(item?.id)} style={styles.deleteBtn}>
-            <Text>{Strings.Delete}</Text>
-          </Button>
-        </Row>
-      </View>
-    );
-  };
-
   const setData = () => {
     let latestTaskName = 'No Task Yet';
 
@@ -85,6 +64,27 @@ const HomeScreen = () => {
   useEffect(() => {
     setData();
   }, [myData]);
+
+
+  const renderList: ListRenderItem<TodoType> = ({item}) => {
+    return (
+      <View style={styles.itemContainer}>
+        <Text style={[styles.itemTitle]} numberOfLines={1}>
+          {item?.title}
+        </Text>
+        <Row style={styles.centeredRow}>
+          <Button
+            onPress={() => editTask(item?.id, item?.title)}
+            style={styles.deleteBtn}>
+            <Text>{Strings.Edit}</Text>
+          </Button>
+          <Button onPress={() => deleteTask(item?.id)} style={styles.deleteBtn}>
+            <Text>{Strings.Delete}</Text>
+          </Button>
+        </Row>
+      </View>
+    );
+  };
 
   return (
     <>

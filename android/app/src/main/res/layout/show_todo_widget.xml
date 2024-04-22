@@ -4,16 +4,40 @@
     android:layout_height="match_parent"
     android:theme="@style/AppTheme.AppWidgetContainer">
 
+   
     <TextView
-        android:id="@+id/appwidget_text"
-        style="@style/Widget.TodoWidget.AppWidget.InnerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="8dp"
-        android:contentDescription="@string/appwidget_text"
-        android:text="@string/appwidget_text"
-        android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:id="@+id/widgetTitle"
+        android:layout_width="400dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="0dp"
+        android:shadowColor="#CCCBCB"
+        android:shadowRadius="1"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/todoTask"
+        android:layout_width="395dp"
+        android:layout_height="32dp"
+        android:layout_alignTop="@+id/widgetTitle"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="0dp"
+        android:shadowColor="#000000"
+        android:text="TextView"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+   
 </RelativeLayout>
